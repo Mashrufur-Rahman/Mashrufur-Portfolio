@@ -14,7 +14,7 @@ import Timeline from './components/Timeline';
 import ContactHub from './components/ContactHub';
 import NetworkBackground from './components/NetworkBackground';
 import Terminal from './components/Terminal';
-import Myimage from './assets/images/IMG_5827~2.jpg';
+import Myimage from './assets/images/IMG_58272.jpg';
 // Data imports
 import { 
   PROJECTS_DATA, 
