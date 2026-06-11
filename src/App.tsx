@@ -305,7 +305,7 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
                   
                   <h1 className="text-4xl sm:text-5xl lg:text-7xl font-sans tracking-tight font-black leading-none text-white uppercase select-none">
                     LET'S BUILD <br />
-                    <span className="text-stroke-white opacity-90 block my-2 text-[#00FFFF]">WORLDS</span>
+                    <span className="text-stroke-white opacity-90 block my-2 text-[#00FFFF]">WORLD</span>
                     TOGETHER
                   </h1>
                 </div>
@@ -344,7 +344,7 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#00FFFF] to-[#00FFFF]/20 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
                   <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-xl overflow-hidden border-2 border-white/10 group-hover:border-[#00FFFF]/40 shadow-2xl bg-[#050505] transition-colors duration-500">
                     <img 
-                      src="/src/assets/images/engineer_avatar_1781183311943.png" 
+                      src="src/assets/images/IMG_5827~2.jpg" 
                       alt="K M Mashrufur Rahman" 
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0  transition-all duration-750 ease-out"
@@ -1022,7 +1022,7 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
               <span className="text-[11px] text-[#00FFFF] font-extrabold font-sans">KM</span>
             </div>
             <div>
-              <span className="text-xs font-mono text-[#B3B3B3] block font-semibold uppercase tracking-wider">Let's Build Worlds Together</span>
+              <span className="text-xs font-mono text-[#B3B3B3] block font-semibold uppercase tracking-wider">Let's Build World Together</span>
               <span className="text-[10px] font-mono text-[#808080] block mt-0.5 uppercase tracking-tight">K M MASHRUFUR RAHMAN // LIPPSTADT, DE</span>
             </div>
           </div>
