@@ -14,7 +14,7 @@ import Timeline from './components/Timeline';
 import ContactHub from './components/ContactHub';
 import NetworkBackground from './components/NetworkBackground';
 import Terminal from './components/Terminal';
-
+import Myimage from './assets/images/IMG_5827~2.jpg';
 // Data imports
 import { 
   PROJECTS_DATA, 
@@ -344,7 +344,7 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#00FFFF] to-[#00FFFF]/20 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
                   <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-xl overflow-hidden border-2 border-white/10 group-hover:border-[#00FFFF]/40 shadow-2xl bg-[#050505] transition-colors duration-500">
                     <img 
-                      src="src/assets/images/IMG_5827~2.jpg" 
+                      src={Myimage}
                       alt="K M Mashrufur Rahman" 
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0  transition-all duration-750 ease-out"
