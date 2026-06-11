@@ -232,7 +232,7 @@ export default function Terminal({ onNavigate }: TerminalProps) {
 
       {/* Active input panel prompt */}
       <form onSubmit={handleCommand} className="border-t border-white/5 bg-[#0a0a0a] px-6 py-4 flex items-center gap-2 shrink-0">
-        <ChevronRight className="w-4 h-4 text-[#00FFFF] animate-pulse shrink-0" />
+        <ChevronRight className="w-4 h-4 text-[#00FFFF] shrink-0" />
         <span className="text-[#00FFFF] shrink-0 select-none">mashrufur ~ %</span>
         <input
           ref={inputRef}
@@ -246,7 +246,7 @@ export default function Terminal({ onNavigate }: TerminalProps) {
         />
         <button 
           type="submit" 
-          className="px-3 py-1.5 text-xs border border-white/20 hover:border-[#00FFFF]/40 text-[#B3B3B3] hover:text-[#00FFFF] rounded hover:bg-[#00FFFF]/5 cursor-pointer transition-all flex items-center gap-1.5 shrink-0 font-mono font-bold uppercase"
+          className="px-3 py-1.5 text-xs border border-white/20 hover:border-[#00FFFF]/40 text-[#B3B3B3] hover:text-[#00FFFF] rounded hover:bg-[#00FFFF]/5 cursor-pointer flex items-center gap-1.5 shrink-0 font-mono font-bold uppercase"
         >
           <Play className="w-3 h-3" />
           <span>Run</span>

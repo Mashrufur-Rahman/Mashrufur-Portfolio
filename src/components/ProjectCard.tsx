@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Project } from '../types';
+import { motion } from "motion/react";
 import { Github, ExternalLink, Maximize2, X, ArrowRight } from 'lucide-react';
 
 interface ProjectCardProps {
@@ -13,8 +14,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <>
       {/* Outer Project Card - Elegant Case study style */}
-      <div 
-        className="group relative flex flex-col bg-[#121212] border border-white/10 rounded-xl overflow-hidden transition-all duration-300 h-full hover:border-[#00FFFF]/40 hover:shadow-[0_12px_30px_rgba(0,255,255,0.04)]"
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }}
+        className="group relative flex flex-col bg-[#121212] border border-white/10 rounded-xl overflow-hidden transition-colors h-full hover:border-[#00FFFF]/40"
       >
         {/* Project Image */}
         <div className="relative h-56 w-full overflow-hidden shrink-0 border-b border-white/5 bg-neutral-900">
@@ -22,7 +24,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             src={project.image} 
             alt={project.title}
             referrerPolicy="no-referrer"
-            className="w-full h-full object-cover grayscale brightness-90 group-hover:grayscale-0 group-hover:scale-[1.02] group-hover:brightness-100 transition-all duration-500 ease-out"
+            className="w-full h-full object-cover grayscale brightness-90 group-hover:grayscale-0  group-hover:brightness-100  ease-out"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
         </div>
@@ -70,13 +72,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Case Study Detail Dialog Modal */}
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur-md bg-black/80 transition-all">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4  bg-black/80 transition-all">
           <div 
-            className="w-full max-w-2xl bg-[#121212] border border-white/10 rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[85vh] animate-in fade-in zoom-in-95 duration-200"
+            className="w-full max-w-2xl bg-[#121212] border border-white/10 rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[85vh] "
           >
             {/* Header */}
             <div className="border-b border-white/5 px-6 py-4 flex items-center justify-between bg-black/40 select-none">

@@ -1,3 +1,4 @@
+import BuddyProgramme from './assets/images/buddy programme.jpg';
 import IKnowGender from './assets/images/I Know Gender_Course certificate - I Know Gender An Introduction to Gender Equality for UN staff_page-0001.jpg';
 import ProtectionHumanRights from './assets/images/Protection_and_promotion_of_human_rights_in_mental_health_and_psychosocial_support_in_emergencies-Course_Certificate_8728215_page-0001.jpg';
 import IntroAdvocacy from './assets/images/Advocacy_Course certificate - Introduction to Advocacy_page-0001.jpg';
@@ -154,7 +155,7 @@ export const CERTIFICATIONS_DATA: Certification[] = [
     issuer: 'HSHL Lippstadt Campus, Germany',
     date: 'Aug 2025',
     description: 'Official volunteer appreciation scroll issued by the university for outstanding mentorship and intercultural care of international bachelor and master entrants.',
-    image: 'src/assets/images/buddy programme.jpg',
+    image: BuddyProgramme,
     category: 'volunteering',
     badge: 'Mentoring',
     summary: 'Recognized for outstanding mentorship and intercultural support for international newcomers.'

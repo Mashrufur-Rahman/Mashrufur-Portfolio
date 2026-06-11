@@ -32,7 +32,7 @@ export default function Timeline() {
             >
               {/* Left Indicator - Small white or cyan dot on timeline line */}
               <div 
-                className="absolute left-6 md:left-8 top-3.5 w-2.5 h-2.5 rounded-full bg-[#050505] border-2 -translate-x-1/2 transition-colors duration-300 z-20 pointer-events-none"
+                className="absolute left-6 md:left-8 top-3.5 w-2.5 h-2.5 rounded-full bg-[#050505] border-2 -translate-x-1/2  z-20 pointer-events-none"
                 style={{
                   borderColor: hovered ? '#00FFFF' : '#404040'
                 }}
@@ -41,7 +41,7 @@ export default function Timeline() {
               {/* Timeline content body */}
               <div className="pl-12 w-full">
                 <div 
-                  className={`border rounded-xl p-6 bg-[#121212] transition-colors duration-300 ${
+                  className={`border rounded-xl p-6 bg-[#121212]  ${
                     hovered ? 'border-[#00FFFF]/30' : 'border-white/5'
                   }`}
                 >
@@ -58,7 +58,7 @@ export default function Timeline() {
                   </div>
 
                   {/* Title / School names */}
-                  <h3 className="text-lg md:text-xl font-bold text-[#FFFFFF] tracking-tight group-hover:text-[#00FFFF] transition-colors duration-250">
+                  <h3 className="text-lg md:text-xl font-bold text-[#FFFFFF] tracking-tight group-hover:text-[#00FFFF] ">
                     {edu.degree}
                   </h3>
 
@@ -69,7 +69,7 @@ export default function Timeline() {
                         href={link} 
                         target="_blank" 
                         rel="noreferrer"
-                        className="text-[#00FFFF]/70 hover:text-[#00FFFF] transition-colors cursor-pointer"
+                        className="text-[#00FFFF]/70 hover:text-[#00FFFF]  cursor-pointer"
                         title="Visit Institution Site"
                       >
                         <Link2 className="w-3.5 h-3.5" />

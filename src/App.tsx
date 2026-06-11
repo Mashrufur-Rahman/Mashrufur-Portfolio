@@ -5,6 +5,7 @@ import {
   Download, ArrowLeft, Send, Check, Copy, Mail, Phone, Linkedin, Github,
   X, ZoomIn, ZoomOut, ChevronLeft, ChevronRight
 } from 'lucide-react';
+import { motion } from 'motion/react';
 
 // Core interactive components
 import SkillsGrid from './components/SkillsGrid';
@@ -192,7 +193,7 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
       <NetworkBackground />
 
       {/* 2. Sleek Luxury Navigation Header */}
-      <header className="sticky top-0 z-40 bg-[#050505]/90 backdrop-blur-md border-b border-white/5">
+      <header className="sticky top-0 z-40 bg-[#050505]  border-b border-white/5">
         <div className="max-w-6xl mx-auto px-6 sm:px-8 h-20 flex items-center justify-between">
           
           {/* Logo brand symbol */}
@@ -271,7 +272,7 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
       <div className="bg-[#050505] border-b border-white/5 py-3 select-none">
         <div className="max-w-6xl mx-auto px-6 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center space-x-2 text-[10px] font-mono uppercase text-[#B3B3B3]">
-            <span className="w-2 h-2 rounded-full bg-[#00FFFF] shadow-[0_0_8px_#00FFFF] animate-pulse"></span>
+            <span className="w-2 h-2 rounded-full bg-[#00FFFF] shadow-[0_0_8px_#00FFFF] "></span>
             <span>Local Node: Lippstadt, Germany</span>
           </div>
           <div className="text-[10px] font-mono text-[#808080]">
@@ -285,10 +286,17 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
         
         {activeView === 'home' ? (
           /* HOMEPAGE VIEW AREA */
-          <div className="space-y-36 md:space-y-48 animate-in fade-in duration-300">
+          <div className="space-y-36 md:space-y-48 ">
             
             {/* HERO SECTION MODULE */}
-            <section id="sec-hero" className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center min-h-[55vh] scroll-mt-28">
+            <motion.section 
+              id="sec-hero" 
+              className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center min-h-[55vh] scroll-mt-28"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
+            >
               <div className="lg:col-span-7 space-y-8">
                 <div className="space-y-4">
                   <span className="text-[#00FFFF] text-xs font-mono uppercase tracking-[0.3em] font-bold block">
@@ -339,7 +347,7 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
                       src="/src/assets/images/engineer_avatar_1781183311943.png" 
                       alt="K M Mashrufur Rahman" 
                       referrerPolicy="no-referrer"
-                      className="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:scale-[1.02] transition-all duration-750 ease-out"
+                      className="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0  transition-all duration-750 ease-out"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
                   </div>
@@ -348,10 +356,15 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
                   </div>
                 </div>
               </div>
-            </section>
+            </motion.section>
 
             {/* PROFILE ABOUT SUMMARY */}
-            <section id="sec-about" className="space-y-12 scroll-mt-28">
+            <motion.section id="sec-about" className="space-y-12 scroll-mt-28"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
+            >
               <div className="space-y-3">
                 <span className="text-[11px] font-mono text-[#808080] uppercase tracking-widest block">01 // Architecture Synopsis</span>
                 <h2 className="text-2xl md:text-3xl font-black tracking-tight text-white uppercase flex items-center gap-3 select-none">
@@ -393,7 +406,7 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
                 {/* Score Indicators Sidebar */}
                 <div className="lg:col-span-5 space-y-8 border border-white/5 rounded-2xl bg-[#121212] p-8 relative shadow-xl">
                   <div className="absolute right-6 top-6">
-                    <Sliders className="w-5 h-5 text-[#00FFFF]/30 animate-pulse" />
+                    <Sliders className="w-5 h-5 text-[#00FFFF]/30 " />
                   </div>
                   <div>
                     <h4 className="font-mono text-[10px] text-[#00FFFF] font-bold uppercase tracking-widest mb-1">Diagnostic Benchmarks</h4>
@@ -424,10 +437,15 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
                   </div>
                 </div>
               </div>
-            </section>
+            </motion.section>
 
             {/* ACADEMIC TIMELINE MAP */}
-            <section id="sec-timeline" className="space-y-12 scroll-mt-28">
+            <motion.section id="sec-timeline" className="space-y-12 scroll-mt-28"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
+            >
               <div className="space-y-3">
                 <span className="text-[11px] font-mono text-[#808080] uppercase tracking-widest block">02 // Intellectual Timeline</span>
                 <h2 className="text-2xl md:text-3xl font-black tracking-tight text-white uppercase select-none">
@@ -437,10 +455,15 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
               </div>
 
               <Timeline />
-            </section>
+            </motion.section>
 
             {/* SKILLS MULTI-GRID SYSTEM */}
-            <section id="sec-skills" className="space-y-12 scroll-mt-28">
+            <motion.section id="sec-skills" className="space-y-12 scroll-mt-28"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
+            >
               <div className="space-y-3">
                 <span className="text-[11px] font-mono text-[#808080] uppercase tracking-widest block">03 // Competence matrix</span>
                 <h2 className="text-2xl md:text-3xl font-black tracking-tight text-white uppercase select-none">
@@ -450,10 +473,15 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
               </div>
 
               <SkillsGrid />
-            </section>
+            </motion.section>
 
             {/* REPOSITORIES GRID DISPLAY */}
-            <section id="sec-projects" className="space-y-12 scroll-mt-28">
+            <motion.section id="sec-projects" className="space-y-12 scroll-mt-28"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
+            >
               <div className="space-y-3 col-span-full">
                 <span className="text-[11px] font-mono text-[#808080] uppercase tracking-widest block">04 // Inventions & Repositories</span>
                 <h2 className="text-2xl md:text-3xl font-black tracking-tight text-white uppercase select-none">
@@ -467,10 +495,15 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
                   <ProjectCard key={proj.id} project={proj} />
                 ))}
               </div>
-            </section>
+            </motion.section>
 
             {/* ORGANIZATIONAL COMMITMENTS (VOLUNTEERING) */}
-            <section id="sec-leadership" className="space-y-12 scroll-mt-28">
+            <motion.section id="sec-leadership" className="space-y-12 scroll-mt-28"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
+            >
               <div className="space-y-3">
                 <span className="text-[11px] font-mono text-[#808080] uppercase tracking-widest block">05 // Humanist Commitments</span>
                 <h2 className="text-2xl md:text-3xl font-black tracking-tight text-white uppercase select-none">
@@ -502,10 +535,15 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
                   </div>
                 ))}
               </div>
-            </section>
+            </motion.section>
 
             {/* DEDICATED COMMUNITY IMPACT & VOLUNTEERING (CERTIFICATIONS) SECTION */}
-            <section id="sec-volunteering-certs" className="space-y-12 scroll-mt-28">
+            <motion.section id="sec-volunteering-certs" className="space-y-12 scroll-mt-28"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
+            >
               <div className="space-y-3">
                 <span className="text-[11px] font-mono text-[#808080] uppercase tracking-widest block">05.5 // Humanitarian Credentials</span>
                 <h2 className="text-2xl md:text-3xl font-black tracking-tight text-white uppercase select-none">
@@ -524,16 +562,16 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
                     <div 
                       key={cert.id}
                       onClick={() => { playCustomBeep(550, 0.05); setSelectedCertIndex(globalIdx); }}
-                      className="group relative border border-white/10 hover:border-[#00FFFF]/30 rounded-xl overflow-hidden bg-[#121212] transition-all duration-300 flex flex-col h-full cursor-pointer hover:shadow-[0_4px_20px_rgba(0,255,255,0.02)]"
+                      className="group relative border border-white/10 hover:border-[#00FFFF]/30 rounded-xl overflow-hidden bg-[#121212]  flex flex-col h-full cursor-pointer hover:shadow-[0_4px_20px_rgba(0,255,255,0.02)]"
                     >
                       <div className="relative h-44 w-full bg-[#050505] overflow-hidden shrink-0 border-b border-white/5">
                         <img 
                           src={cert.image} 
                           alt={cert.title}
                           referrerPolicy="no-referrer"
-                          className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                          className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0  "
                         />
-                        <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-md border border-white/10 rounded-md px-2 py-0.5 text-[9px] font-mono font-semibold uppercase text-[#00FFFF] tracking-wider">
+                        <div className="absolute top-3 right-3 bg-[#050505]/95  border border-white/10 rounded-md px-2 py-0.5 text-[9px] font-mono font-semibold uppercase text-[#00FFFF] tracking-wider">
                           {cert.date}
                         </div>
                       </div>
@@ -568,10 +606,15 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
                   );
                 })}
               </div>
-            </section>
+            </motion.section>
 
             {/* DIRECT CONNECT COMMUNICATION HUBS */}
-            <section id="sec-contact" className="space-y-12 scroll-mt-28">
+            <motion.section id="sec-contact" className="space-y-12 scroll-mt-28"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
+            >
               <div className="space-y-3">
                 <span className="text-[11px] font-mono text-[#808080] uppercase tracking-widest block">06 // Communication pipeline</span>
                 <h2 className="text-2xl md:text-3xl font-black tracking-tight text-white uppercase select-none">
@@ -581,12 +624,12 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
               </div>
 
               <ContactHub />
-            </section>
+            </motion.section>
 
           </div>
         ) : activeView === 'certificates' ? (
           /* DEDICATED CERTIFICATIONS VIEW PAGE */
-          <div className="space-y-12 animate-in fade-in duration-300">
+          <div className="space-y-12 ">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 border-b border-white/5 pb-8 select-none">
               <div>
                 <span className="text-[10px] font-mono text-[#00FFFF] uppercase tracking-widest font-bold block">Credentials Showcase</span>
@@ -672,16 +715,16 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
                         <div 
                           key={cert.id}
                           onClick={() => { playCustomBeep(550, 0.05); setSelectedCertIndex(globalIdx); }}
-                          className="group relative border border-white/10 hover:border-[#00FFFF]/30 rounded-xl overflow-hidden bg-[#121212] transition-all duration-300 flex flex-col h-full cursor-pointer hover:shadow-[0_4px_20px_rgba(0,255,255,0.02)]"
+                          className="group relative border border-white/10 hover:border-[#00FFFF]/30 rounded-xl overflow-hidden bg-[#121212]  flex flex-col h-full cursor-pointer hover:shadow-[0_4px_20px_rgba(0,255,255,0.02)]"
                         >
                           <div className="relative h-44 w-full bg-[#050505] overflow-hidden shrink-0 border-b border-white/5">
                             <img 
                               src={cert.image} 
                               alt={cert.title}
                               referrerPolicy="no-referrer"
-                              className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                              className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0  "
                             />
-                            <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-md border border-white/10 rounded-md px-2 py-0.5 text-[9px] font-mono font-semibold uppercase text-[#00FFFF] tracking-wider">
+                            <div className="absolute top-3 right-3 bg-[#050505]/95  border border-white/10 rounded-md px-2 py-0.5 text-[9px] font-mono font-semibold uppercase text-[#00FFFF] tracking-wider">
                               {cert.date}
                             </div>
                           </div>
@@ -741,16 +784,16 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
                         <div 
                           key={cert.id}
                           onClick={() => { playCustomBeep(550, 0.05); setSelectedCertIndex(globalIdx); }}
-                          className="group relative border border-white/10 hover:border-[#00FFFF]/30 rounded-xl overflow-hidden bg-[#121212] transition-all duration-300 flex flex-col h-full cursor-pointer hover:shadow-[0_4px_20px_rgba(0,255,255,0.02)]"
+                          className="group relative border border-white/10 hover:border-[#00FFFF]/30 rounded-xl overflow-hidden bg-[#121212]  flex flex-col h-full cursor-pointer hover:shadow-[0_4px_20px_rgba(0,255,255,0.02)]"
                         >
                           <div className="relative h-44 w-full bg-[#050505] overflow-hidden shrink-0 border-b border-white/5">
                             <img 
                               src={cert.image} 
                               alt={cert.title}
                               referrerPolicy="no-referrer"
-                              className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                              className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0  "
                             />
-                            <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-md border border-white/10 rounded-md px-2 py-0.5 text-[9px] font-mono font-semibold uppercase text-[#00FFFF] tracking-wider">
+                            <div className="absolute top-3 right-3 bg-[#050505]/95  border border-white/10 rounded-md px-2 py-0.5 text-[9px] font-mono font-semibold uppercase text-[#00FFFF] tracking-wider">
                               {cert.date}
                             </div>
                           </div>
@@ -806,16 +849,16 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
                         <div 
                           key={cert.id}
                           onClick={() => { playCustomBeep(550, 0.05); setSelectedCertIndex(globalIdx); }}
-                          className="group relative border border-white/10 hover:border-[#00FFFF]/30 rounded-xl overflow-hidden bg-[#121212] transition-all duration-300 flex flex-col h-full cursor-pointer hover:shadow-[0_4px_20px_rgba(0,255,255,0.02)]"
+                          className="group relative border border-white/10 hover:border-[#00FFFF]/30 rounded-xl overflow-hidden bg-[#121212]  flex flex-col h-full cursor-pointer hover:shadow-[0_4px_20px_rgba(0,255,255,0.02)]"
                         >
                           <div className="relative h-44 w-full bg-[#050505] overflow-hidden shrink-0 border-b border-white/5">
                             <img 
                               src={cert.image} 
                               alt={cert.title}
                               referrerPolicy="no-referrer"
-                              className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                              className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0  "
                             />
-                            <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-md border border-white/10 rounded-md px-2 py-0.5 text-[9px] font-mono font-semibold uppercase text-[#00FFFF] tracking-wider">
+                            <div className="absolute top-3 right-3 bg-[#050505]/95  border border-white/10 rounded-md px-2 py-0.5 text-[9px] font-mono font-semibold uppercase text-[#00FFFF] tracking-wider">
                               {cert.date}
                             </div>
                           </div>
@@ -868,16 +911,16 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
                         <div 
                           key={cert.id}
                           onClick={() => { playCustomBeep(550, 0.05); setSelectedCertIndex(globalIdx); }}
-                          className="group relative border border-white/10 hover:border-[#00FFFF]/30 rounded-xl overflow-hidden bg-[#121212] transition-all duration-300 flex flex-col h-full cursor-pointer hover:shadow-[0_4px_20px_rgba(0,255,255,0.02)]"
+                          className="group relative border border-white/10 hover:border-[#00FFFF]/30 rounded-xl overflow-hidden bg-[#121212]  flex flex-col h-full cursor-pointer hover:shadow-[0_4px_20px_rgba(0,255,255,0.02)]"
                         >
                           <div className="relative h-44 w-full bg-[#050505] overflow-hidden shrink-0 border-b border-white/5">
                             <img 
                               src={cert.image} 
                               alt={cert.title}
                               referrerPolicy="no-referrer"
-                              className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                              className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0  "
                             />
-                            <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-md border border-white/10 rounded-md px-2 py-0.5 text-[9px] font-mono font-semibold uppercase text-[#00FFFF] tracking-wider">
+                            <div className="absolute top-3 right-3 bg-[#050505]/95  border border-white/10 rounded-md px-2 py-0.5 text-[9px] font-mono font-semibold uppercase text-[#00FFFF] tracking-wider">
                               {cert.date}
                             </div>
                           </div>
@@ -944,7 +987,7 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
           </div>
         ) : (
           /* DEDICATED CONSOLE TERMINAL SHELL VIEW */
-          <div className="space-y-12 animate-in fade-in duration-300">
+          <div className="space-y-12 ">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 border-b border-white/5 pb-8 select-none">
               <div>
                 <span className="text-[10px] font-mono text-[#00FFFF] uppercase tracking-widest font-bold block">Console Workspace</span>
@@ -997,7 +1040,7 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
 
       {/* FULLSCREEN CERTIFICATE INTERACTIVE GALLERY MODAL */}
       {selectedCertIndex !== null && (
-        <div className="fixed inset-0 z-50 flex flex-col items-center justify-between p-6 bg-black/95 backdrop-blur-xl animate-in fade-in duration-300 select-none">
+        <div className="fixed inset-0 z-50 flex flex-col items-center justify-between p-6 bg-[#050505]   select-none">
           {/* Top Control Rail */}
           <div className="w-full max-w-6xl flex items-center justify-between py-4 border-b border-white/5 font-mono text-xs text-[#808080]">
             <div>
@@ -1023,7 +1066,7 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
                 onClick={() => { playCustomBeep(700, 0.06); handleDownloadCertificate(CERTIFICATIONS_DATA[selectedCertIndex]); }}
                 className="text-[#00FFFF] border border-[#00FFFF]/25 hover:border-[#00FFFF]/50 bg-[#00FFFF]/5 rounded px-3 py-1 transition-all cursor-pointer font-bold flex items-center gap-1.5"
               >
-                <Download className="w-3.5 h-3.5 animate-bounce" />
+                <Download className="w-3.5 h-3.5 " />
                 <span>Download</span>
               </button>
               <button 
