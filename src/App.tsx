@@ -3,7 +3,7 @@ import {
   Award, ArrowUpRight, Calendar, MapPin, Sparkles, 
   ExternalLink, Sliders, Volume2, VolumeX, Search,
   Download, ArrowLeft, Send, Check, Copy, Mail, Phone, Linkedin, Github,
-  X, ZoomIn, ZoomOut, ChevronLeft, ChevronRight
+  X, ZoomIn, ZoomOut, ChevronLeft, ChevronRight, ArrowUp
 } from 'lucide-react';
 import { motion } from 'motion/react';
 
@@ -26,13 +26,32 @@ import {
 
 import { Certification } from './types';
 
+import { useNavigate, useLocation } from 'react-router-dom';
+
 export default function App() {
-  const [activeView, setActiveView] = useState<'home' | 'certificates' | 'shell'>('home');
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const activeView = location.pathname === '/certificates' ? 'certificates' : location.pathname === '/shell' ? 'shell' : 'home';
+  const setActiveView = (view: 'home' | 'certificates' | 'shell') => {
+    if (view === 'home') navigate('/');
+    else navigate('/' + view);
+  };
+  
   const [isMuted, setIsMuted] = useState(false); // Enable premium tactile audio by default
   const [searchQuery, setSearchQuery] = useState('');
   const [activeFilter, setActiveFilter] = useState<string>('all');
   const [selectedCertIndex, setSelectedCertIndex] = useState<number | null>(null);
   const [zoomScale, setZoomScale] = useState(1);
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 300);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Sound synthesis engine using standard Web Audio API
   const playCustomBeep = (freq = 800, duration = 0.05, type: OscillatorType = 'sine') => {
@@ -89,9 +108,9 @@ export default function App() {
 
   const handleDownloadCertificate = (cert: Certification) => {
     const link = document.createElement('a');
-    link.href = cert.image;
+    link.href = cert.pdf || cert.image;
     link.target = '_blank';
-    link.download = `${cert.title.replace(/\s+/g, '_')}_Certificate.jpg`;
+    link.download = `${cert.title.replace(/\s+/g, '_')}_Certificate.${cert.pdf ? 'pdf' : 'jpg'}`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -152,6 +171,7 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
       cert.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       cert.issuer.toLowerCase().includes(searchQuery.toLowerCase()) ||
       cert.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      cert.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
       cert.date.toLowerCase().includes(searchQuery.toLowerCase());
     
     if (activeFilter === 'all') {
@@ -347,7 +367,7 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
                       src={Myimage}
                       alt="K M Mashrufur Rahman" 
                       referrerPolicy="no-referrer"
-                      className="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0  transition-all duration-750 ease-out"
+                      className="w-full h-full object-cover transition-all duration-500 ease-out group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
                   </div>
@@ -569,7 +589,7 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
                           src={cert.image} 
                           alt={cert.title}
                           referrerPolicy="no-referrer"
-                          className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0  "
+                          className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${cert.rotate ? "-rotate-90 scale-150 group-hover:scale-[1.6]" : ""}`}
                         />
                         <div className="absolute top-3 right-3 bg-[#050505]/95  border border-white/10 rounded-md px-2 py-0.5 text-[9px] font-mono font-semibold uppercase text-[#00FFFF] tracking-wider">
                           {cert.date}
@@ -634,7 +654,7 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
               <div>
                 <span className="text-[10px] font-mono text-[#00FFFF] uppercase tracking-widest font-bold block">Credentials Showcase</span>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-sans font-black tracking-tight text-white uppercase mt-1">
-                  CERTIFICATIONS & ONRAMPS
+                  CERTIFICATES & ACHIEVEMENTS
                 </h2>
               </div>
               <button 
@@ -647,7 +667,7 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
             </div>
 
             <p className="text-sm text-[#B3B3B3] leading-relaxed max-w-3xl">
-              Academic merits and industry onramps verifying proficiency in high-end simulation platforms, digital circuit design frameworks, and programming paradigms.
+              A collection of technical certifications, academic achievements, volunteer experiences, leadership activities, and continuous learning milestones.
             </p>
 
             {/* Search and Filters Hub */}
@@ -680,6 +700,7 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
                     { label: 'Technical', value: 'technical' },
                     { label: 'AI & Machine Learning', value: 'ai_ml' },
                     { label: 'Engineering', value: 'engineering' },
+                    { label: 'Programming', value: 'programming' },
                     { label: 'Volunteering', value: 'volunteering' },
                     { label: 'Leadership', value: 'leadership' },
                     { label: 'Awards', value: 'awards' },
@@ -722,7 +743,7 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
                               src={cert.image} 
                               alt={cert.title}
                               referrerPolicy="no-referrer"
-                              className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0  "
+                              className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${cert.rotate ? "-rotate-90 scale-150 group-hover:scale-[1.6]" : ""}`}
                             />
                             <div className="absolute top-3 right-3 bg-[#050505]/95  border border-white/10 rounded-md px-2 py-0.5 text-[9px] font-mono font-semibold uppercase text-[#00FFFF] tracking-wider">
                               {cert.date}
@@ -791,7 +812,7 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
                               src={cert.image} 
                               alt={cert.title}
                               referrerPolicy="no-referrer"
-                              className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0  "
+                              className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${cert.rotate ? "-rotate-90 scale-150 group-hover:scale-[1.6]" : ""}`}
                             />
                             <div className="absolute top-3 right-3 bg-[#050505]/95  border border-white/10 rounded-md px-2 py-0.5 text-[9px] font-mono font-semibold uppercase text-[#00FFFF] tracking-wider">
                               {cert.date}
@@ -856,7 +877,7 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
                               src={cert.image} 
                               alt={cert.title}
                               referrerPolicy="no-referrer"
-                              className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0  "
+                              className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${cert.rotate ? "-rotate-90 scale-150 group-hover:scale-[1.6]" : ""}`}
                             />
                             <div className="absolute top-3 right-3 bg-[#050505]/95  border border-white/10 rounded-md px-2 py-0.5 text-[9px] font-mono font-semibold uppercase text-[#00FFFF] tracking-wider">
                               {cert.date}
@@ -918,7 +939,7 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
                               src={cert.image} 
                               alt={cert.title}
                               referrerPolicy="no-referrer"
-                              className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0  "
+                              className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${cert.rotate ? "-rotate-90 scale-150 group-hover:scale-[1.6]" : ""}`}
                             />
                             <div className="absolute top-3 right-3 bg-[#050505]/95  border border-white/10 rounded-md px-2 py-0.5 text-[9px] font-mono font-semibold uppercase text-[#00FFFF] tracking-wider">
                               {cert.date}
@@ -1098,13 +1119,22 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
 
             {/* Display Canvas with zoom transition */}
             <div className="col-span-12 md:col-span-8 flex items-center justify-center overflow-auto max-h-[55vh] md:max-h-[65vh] relative border border-white/5 bg-neutral-950/65 rounded-2xl p-4 min-h-[300px]">
-              <img 
+              {CERTIFICATIONS_DATA[selectedCertIndex].pdf ? (
+                <iframe 
+                  src={`${CERTIFICATIONS_DATA[selectedCertIndex].pdf}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
+                  style={{ transform: `scale(${zoomScale})` }}
+                  className="w-full h-[50vh] transition-transform duration-300 border-0 bg-transparent"
+                  title={CERTIFICATIONS_DATA[selectedCertIndex].title}
+                />
+              ) : (
+                <img 
                   src={CERTIFICATIONS_DATA[selectedCertIndex].image} 
                   alt={CERTIFICATIONS_DATA[selectedCertIndex].title}
                   referrerPolicy="no-referrer"
-                  style={{ transform: `scale(${zoomScale})` }}
-                  className="max-w-full max-h-[50vh] object-contain rounded-lg transition-transform duration-300"
+                  style={{ transform: `scale(${zoomScale}) ${CERTIFICATIONS_DATA[selectedCertIndex].rotate ? 'rotate(-90deg)' : ''}` }}
+                  className={`max-w-full max-h-[50vh] object-contain rounded-lg transition-transform duration-300`}
                 />
+              )}
             </div>
 
             {/* Next navigation button */}
@@ -1157,6 +1187,18 @@ COORDINATED COMMITMENTS (VOLUNTEERING):
           </div>
         </div>
       )}
+
+      <motion.button
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: showBackToTop ? 1 : 0, y: showBackToTop ? 0 : 20 }}
+        onClick={() => { playCustomBeep(600, 0.05); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+        style={{ pointerEvents: showBackToTop ? 'auto' : 'none' }}
+        className="fixed bottom-6 right-6 p-3 rounded-full bg-[#050505] border border-white/20 text-[#00FFFF] hover:bg-[#00FFFF]/10 hover:border-[#00FFFF]/40 transition-all z-50 hover:scale-110 shadow-[0_4px_20px_rgba(0,255,255,0.1)]"
+        aria-label="Back to top"
+      >
+        <ArrowUp size={24} />
+      </motion.button>
+
     </div>
   );
 }

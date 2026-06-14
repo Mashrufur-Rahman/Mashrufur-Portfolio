@@ -5,6 +5,22 @@ import IntroAdvocacy from './assets/images/Advocacy_Course certificate - Introdu
 import DigitalSecurity from './assets/images/Digital Security and human rights amensty_page-0001.jpg';
 import PrimaryHealthCare from './assets/images/The primary health care approach_page-0001.jpg';
 import ResearchHealth from './assets/images/Reasearch health emergency and disasters_page-0001 (1).jpg';
+import ChatCourseCert from './assets/images/CHAT_Course certificate.jpeg';
+import DevelopingAsALeader from './assets/images/Developing as a Leader 2.jpeg';
+import FundOfHumanRights from './assets/images/fundamental of human rights_page-0001.jpg';
+import IHR3 from './assets/images/international health regulations IHR 3.jpeg';
+import IntroHumanRights from './assets/images/introduction to human rights_page-0001.jpg';
+import LeadershipInfluence from './assets/images/leadership and influence skill 2.jpeg';
+import LeadershipAdolescents from './assets/images/Leadership-Adolescents_Course certificate 3.jpeg';
+import MentoringSkills from './assets/images/mentoring skills- become a professional mentor at work.jpg';
+import PoliceHumanRights from './assets/images/police and human rights_page-0001.jpg';
+
+import MachineLearningCert2 from './assets/images/Machine Learning certificate_2.jpeg';
+import MachineLearningReport from './assets/images/Machine Learning report.jpeg';
+import MatlabSimulinkProgress from './assets/images/matlab Simulink Progress.jpeg';
+import MatlabCert from './assets/images/Matlab_certificate.jpeg';
+import UdemyPythonCert from './assets/images/Udemy Python Cirtificate.jpeg';
+import VCAward from './assets/images/VC AWARD.jpeg';
 
 import { Project, Education, Experience, Certification, Achievement, Volunteering, Skill } from './types';
 
@@ -150,6 +166,105 @@ export const PROJECTS_DATA: Project[] = [
 
 export const CERTIFICATIONS_DATA: Certification[] = [
   {
+    id: 'cert-chat-course',
+    title: 'CHAT – a toolkit to improve Community Engagement in emergencies',
+    issuer: 'UNICEF',
+    date: 'Jun 2026',
+    description: 'Certificate of completion for the CHAT toolkit designed to enhance community engagement across high-impact emergency environments.',
+    image: ChatCourseCert,
+    category: 'volunteering',
+    badge: 'International Engagement',
+    summary: 'Successfully completed the CHAT course for managing community engagement during emergencies.'
+  },
+  {
+    id: 'cert-dev-leader',
+    title: 'Leading Teams: Developing as a Leader',
+    issuer: 'University of Illinois Urbana-Champaign (Coursera)',
+    date: 'Jun 2026',
+    description: 'Specialized course focusing on leadership skill development, team motivation, and professional management tactics.',
+    image: DevelopingAsALeader,
+    category: 'leadership',
+    badge: 'Leadership',
+    summary: 'Acquired core competencies in team leadership, interpersonal communication, and organizational development.'
+  },
+  {
+    id: 'cert-fund-human-rights',
+    title: 'Freedom of Expression - a fundamental right',
+    issuer: 'Amnesty International',
+    date: 'Jun 2026',
+    description: 'Certificate of participation in a course detailing the fundamental importance of freedom of expression within human rights frameworks.',
+    image: FundOfHumanRights,
+    category: 'volunteering',
+    badge: 'Social Contribution',
+    summary: 'Verified fundamental knowledge in human rights standards and freedom of expression policies.'
+  },
+  {
+    id: 'cert-ihr3',
+    title: 'Introduction to the International Health Regulations (IHR)',
+    issuer: 'World Health Organization (WHO)',
+    date: 'Jun 2026',
+    description: 'Award of completion for understanding public health event assessment and notification criteria under IHR directives.',
+    image: IHR3,
+    category: 'volunteering',
+    badge: 'Community Impact',
+    summary: 'Mastered global health regulations pertaining to infectious diseases, emergency notification, and containment measures.'
+  },
+  {
+    id: 'cert-intro-human-rights',
+    title: 'An Introduction to Human Rights',
+    issuer: 'Amnesty International',
+    date: 'Jun 2026',
+    description: 'Extensive exploration of the origins of human rights, key treaties, and contemporary challenges faced across international borders.',
+    image: IntroHumanRights,
+    category: 'volunteering',
+    badge: 'Social Contribution',
+    summary: 'Strengthened baseline understanding of foundational human rights treaties and their global application.'
+  },
+  {
+    id: 'cert-leadership-influence',
+    title: 'Leadership and Influencing Skills',
+    issuer: 'Google (Coursera)',
+    date: 'Jun 2026',
+    description: 'Learned practical strategies to influence without authority, build cross-functional relationships, and drive team outcomes.',
+    image: LeadershipInfluence,
+    category: 'leadership',
+    badge: 'Influence',
+    summary: 'Expanded capabilities in corporate influence strategies, stakeholder management, and cross-functional collaborations.'
+  },
+  {
+    id: 'cert-leadership-adolescents',
+    title: 'Leadership for Planning and Decision-Making with Adolescents',
+    issuer: 'UNICEF',
+    date: 'Jun 2026',
+    description: 'Strategic module on planning initiatives centered around empowering adolescent decision-making abilities and fostering youth leadership structures.',
+    image: LeadershipAdolescents,
+    category: 'leadership',
+    badge: 'Leadership',
+    summary: 'Specialized in youth empowerment strategies, active adolescent participation frameworks, and community leadership.'
+  },
+  {
+    id: 'cert-mentoring-skills',
+    title: 'Mentoring Skills: Become a Professional Mentor at Work',
+    issuer: 'Udemy',
+    date: 'Jun 2026',
+    description: 'Advanced techniques in professional mentoring, including active listening patterns, feedback mechanisms, and developmental counseling.',
+    image: MentoringSkills,
+    category: 'leadership',
+    badge: 'Mentoring',
+    summary: 'Equipped with professional-grade mentorship skills to guide colleagues toward achieving corporate and personal goals.'
+  },
+  {
+    id: 'cert-police-human-rights',
+    title: 'Welcome to the Police and Human Rights online course',
+    issuer: 'Amnesty International',
+    date: 'Jun 2026',
+    description: 'Participation certificate for course elucidating the relationship between law enforcement operations and strict adherence to human rights directives.',
+    image: PoliceHumanRights,
+    category: 'volunteering',
+    badge: 'Social Contribution',
+    summary: 'Analyzed intersection points between law enforcement obligations, use of force boundaries, and universal human rights standards.'
+  },
+  {
     id: 'cert-buddy',
     title: 'International Buddy Programme Mentor Certificate',
     issuer: 'HSHL Lippstadt Campus, Germany',
@@ -264,34 +379,61 @@ export const CERTIFICATIONS_DATA: Certification[] = [
     id: 'cert-simulink',
     title: 'Simulink Onramp',
     issuer: 'MATLAB Academy - MathWorks',
-    date: 'Nov 2023',
+    date: 'Feb 2025',
     description: 'Acquired core competencies in model-based design, creating block diagram schematics, executing system simulations, and optimizing dynamic parameters.',
-    image: 'https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&w=800&q=80',
+    image: MatlabCert,
     category: 'engineering',
     badge: 'Engineering',
-    summary: 'Certified in complex model-based layout systems, loop validations, and feedback designs.'
+    summary: 'Certified in complex model-based layout systems, loop validations, and feedback designs.',
+    rotate: true
+  },
+  {
+    id: 'cert-simulink-report',
+    title: 'Simulink Onramp Progress Report',
+    issuer: 'MATLAB Academy - MathWorks',
+    date: 'Feb 2025',
+    description: 'Detailed training report covering model-based design, block diagrams, executing system simulations, and optimizing dynamic parameters.',
+    image: MatlabSimulinkProgress,
+    category: 'engineering',
+    badge: 'Engineering',
+    summary: 'Comprehensive progress tracking for complex model-based layout systems.',
+    rotate: true
   },
   {
     id: 'cert-ml',
     title: 'Machine Learning Onramp',
     issuer: 'MATLAB Academy - MathWorks',
-    date: 'Oct 2023',
+    date: 'Feb 2025',
     description: 'Practical training on the basics of machine learning, preprocessing features, importing data, training classifiers, and validating model predictions.',
-    image: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=80',
+    image: MachineLearningCert2,
     category: 'ai_ml',
     badge: 'Technical',
-    summary: 'Mastered mathematical concepts for model fitting and training estimators inside MATLAB.'
+    summary: 'Mastered mathematical concepts for model fitting and training estimators inside MATLAB.',
+    rotate: true
+  },
+  {
+    id: 'cert-ml-report',
+    title: 'Machine Learning Onramp Progress Report',
+    issuer: 'MATLAB Academy - MathWorks',
+    date: 'Feb 2025',
+    description: 'Detailed training report on importing data, training classifiers, and validating model classifications.',
+    image: MachineLearningReport,
+    category: 'ai_ml',
+    badge: 'Technical',
+    summary: 'Comprehensive progress tracking for machine learning classification tools.',
+    rotate: true
   },
   {
     id: 'cert-vc-award',
-    title: 'Vice Chancellor Honor Accord',
+    title: "Vice Chancellor's List of Meritorious Students",
     issuer: 'Green University of Bangladesh',
-    date: '2023',
-    description: 'Distinguished honor roll for maintaining an exceptional academic record of CGPA 3.60 and leading software development track assignments.',
-    image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80',
+    date: 'Dec 2023',
+    description: 'Distinguished honor roll for maintaining an exceptional academic record in the B.Sc. in Computer Science and Engineering program for Summer Semester 2022.',
+    image: VCAward,
     category: 'awards',
     badge: 'Academic',
-    summary: 'Granted high ranking roll honors for superior academic outcomes and software development.'
+    summary: 'Granted high ranking roll honors for superior academic outcomes and software development.',
+    rotate: true
   },
   {
     id: 'cert-ielts',
@@ -317,11 +459,11 @@ export const CERTIFICATIONS_DATA: Certification[] = [
   },
   {
     id: 'cert-python',
-    title: 'Learn to Code in Python',
+    title: 'Learn to Code in Python 3: Programming beginner to advanced',
     issuer: 'Udemy',
-    date: 'May 2023',
+    date: 'Oct 2024',
     description: 'Thorough programming foundation training ranging from fundamentals, variables, and arrays to object-oriented programming and debugging tools.',
-    image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80',
+    image: UdemyPythonCert,
     category: 'technical',
     badge: 'Technical',
     summary: 'Achieved proficiency in procedural concepts, OOP standards, and modular formatting.'

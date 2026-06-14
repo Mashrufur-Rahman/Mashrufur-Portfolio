@@ -37,10 +37,12 @@ export interface Certification {
   date: string;
   description: string;
   image: string;
+  pdf?: string;
   category: 'technical' | 'ai_ml' | 'engineering' | 'volunteering' | 'leadership' | 'awards' | 'language';
   link?: string;
   badge?: string;
   summary?: string;
+  rotate?: boolean;
 }
 
 export interface Achievement {
