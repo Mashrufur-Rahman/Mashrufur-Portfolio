@@ -22,6 +22,15 @@ import MatlabCert from './assets/images/Matlab_certificate.jpeg';
 import UdemyPythonCert from './assets/images/Udemy Python Cirtificate.jpeg';
 import VCAward from './assets/images/VC AWARD.jpeg';
 
+import CrisisManagement from './assets/images/Introduction To Crisins Managment and Crisis Communication.jpeg';
+import ConflictResolution from './assets/images/Conflict Resolution Skills.jpeg';
+import CrossCulturalCommunication from './assets/images/Cross-Cultural Communication & Management.jpeg';
+import EventManagement from './assets/images/Event Management Strategies & Planning.jpeg';
+import InterculturalCommunication from './assets/images/Intercultural Communication and conflict Resolation.jpeg';
+import ProjectManagement from './assets/images/Introduction to Project Management.jpeg';
+import PsychologicalFirstAid from './assets/images/Psychological First Aid.jpeg';
+import ScienceOfWellBeing from './assets/images/The Science of well being for Teens.jpeg';
+
 import { Project, Education, Experience, Certification, Achievement, Volunteering, Skill } from './types';
 
 export const EDUCATION_DATA: Education[] = [
@@ -467,6 +476,94 @@ export const CERTIFICATIONS_DATA: Certification[] = [
     category: 'technical',
     badge: 'Technical',
     summary: 'Achieved proficiency in procedural concepts, OOP standards, and modular formatting.'
+  },
+  {
+    id: 'cert-crisis-management',
+    title: 'Introduction to Crisis Management and Crisis Communication',
+    issuer: 'Certified Course',
+    date: '2025',
+    description: 'Comprehensive study of crisis management, focusing on effective communication strategies and operational responses during critical situations.',
+    image: CrisisManagement,
+    category: 'leadership',
+    badge: 'Management',
+    summary: 'Trained in crisis response and critical communication strategies.'
+  },
+  {
+    id: 'cert-conflict-resolution',
+    title: 'Conflict Resolution Skills',
+    issuer: 'Certified Course',
+    date: '2025',
+    description: 'Developed techniques for resolving workplace conflicts, negotiating solutions, and maintaining healthy professional relationships.',
+    image: ConflictResolution,
+    category: 'leadership',
+    badge: 'Communication',
+    summary: 'Acquired practical skills in identifying, managing, and resolving conflicts.'
+  },
+  {
+    id: 'cert-cross-cultural',
+    title: 'Cross-Cultural Communication & Management',
+    issuer: 'Certified Course',
+    date: '2025',
+    description: 'Explored frameworks for effective cross-cultural communication, managing diverse teams, and fostering inclusive environments across global borders.',
+    image: CrossCulturalCommunication,
+    category: 'leadership',
+    badge: 'Communication',
+    summary: 'Mastered communication strategies for international teams and cultural diversity.'
+  },
+  {
+    id: 'cert-event-management',
+    title: 'Event Management Strategies & Planning',
+    issuer: 'Certified Course',
+    date: '2025',
+    description: 'Learned complete lifecycle event management, from strategic planning and budgeting to on-site execution and post-event analysis.',
+    image: EventManagement,
+    category: 'leadership',
+    badge: 'Strategy',
+    summary: 'Trained in event strategy, operational logistics, and seamless project execution.'
+  },
+  {
+    id: 'cert-intercultural-conflict',
+    title: 'Intercultural Communication and Conflict Resolution',
+    issuer: 'Certified Course',
+    date: '2025',
+    description: 'Studied the intersection of intercultural dynamics and conflict resolution to handle complex disagreements in multicultural environments.',
+    image: InterculturalCommunication,
+    category: 'leadership',
+    badge: 'Communication',
+    summary: 'Specialized in resolving cross-cultural disputes and enhancing mutual understanding.'
+  },
+  {
+    id: 'cert-project-management',
+    title: 'Introduction to Project Management',
+    issuer: 'Certified Course',
+    date: '2025',
+    description: 'Foundational course in project management methodologies, covering scheduling, resource allocation, risk management, and project tracking.',
+    image: ProjectManagement,
+    category: 'leadership',
+    badge: 'Management',
+    summary: 'Gained core knowledge in initiating, executing, and closing projects efficiently.'
+  },
+  {
+    id: 'cert-psychological-first-aid',
+    title: 'Psychological First Aid',
+    issuer: 'Certified Course',
+    date: '2025',
+    description: 'Trained to provide initial, non-intrusive support and psychological first aid to individuals experiencing acute emotional distress or emergencies.',
+    image: PsychologicalFirstAid,
+    category: 'volunteering',
+    badge: 'Health & Support',
+    summary: 'Received training to offer compassionate, immediate psychosocial support.'
+  },
+  {
+    id: 'cert-science-wellbeing',
+    title: 'The Science of Well-Being for Teens',
+    issuer: 'Yale University (Coursera)',
+    date: '2025',
+    description: 'Explored scientific insights into happiness and well-being, focusing on practical habits to improve mental health and personal resilience.',
+    image: ScienceOfWellBeing,
+    category: 'volunteering',
+    badge: 'Personal Growth',
+    summary: 'Learned evidence-based practices to boost happiness and cultivate productive habits.'
   }
 ];
 
